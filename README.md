@@ -40,39 +40,97 @@ Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
 
-![Screenshot 2024-12-25 144719](https://github.com/user-attachments/assets/ce68d997-1fbc-474b-bb0c-6366dca19930)
+FULL ADDER:
 
-![Screenshot 2024-12-25 144743](https://github.com/user-attachments/assets/3c902779-3a8b-44d6-9874-9370ebc9d33e)
+
+![Screenshot 2025-01-02 081759](https://github.com/user-attachments/assets/01a0d591-d612-47d7-92ed-0c1fc9cdeb9f)
+
+
+FULL SUBRACTOR:
+
+
+![Screenshot 2025-01-02 081822](https://github.com/user-attachments/assets/62ba2168-8fb2-45dc-8947-b0970b4416f2)
+
+
+
+
 
 **Procedure**
-1. Type the program in Quartus software.
- 2. Compile and run the program.
- 3. Generate the RTL schematic and save the logic diagram.
- 4. Create nodes for inputs and outputs to generate the timing diagram.
- 5. For different input combinations generate the timing diagram.
+~~~
+FULL ADDER:
+
+1.Open Quartus II and create a new project.
+2.Use schematic design entry to draw the full adder circuit. 
+3.The circuit consists of XOR, AND, and OR gates. 
+4.Compile the design, verify its functionality through simulation. 
+5.Implement the design on the target device and program it.
+
+FULL SUBRACTOR:
 
 
-**DEVELOPED BY** GURUPARAN G  **REFERENCE NO**24001677
+1.Follow the same steps as for the full adder. 
+2.Draw the full subtractor circuit using schematic design. 
+3.The circuit includes XOR, AND, OR gates to perform subtraction. 
+4.Compile, simulate, implement, and program the design similarly to the full adder.
+~~~
+
+
+**DEVELOPED BY**  GURUPARAN G  
+**REFERENCE NO**  24001677
+
+
 **Program:**
+~~~
+FULL ADDER :
 
-![Screenshot 2024-12-25 144319](https://github.com/user-attachments/assets/4b22f4fb-11b7-4261-9622-020116ee168d)
+module fulladd_top(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+wire w1,w2,w3,w4;       
+xor(w1,a,b);
+xor(sum,w1,cin);        
+and(w2,a,b);
+and(w3,b,cin);
+and(w4,cin,a);
+or(carry,w2,w3,w4);
+endmodule 
 
 
-![Screenshot 2024-12-25 144341](https://github.com/user-attachments/assets/de95a240-e90f-4e18-81a3-3b0ffad45df1)
+FULL SUBRACTOR:
+
+
+module fullsub_top(a,b,Bin,BO,DIFF);
+input a,b,Bin;
+output BO,DIFF;
+assign DIFF = a ^ b ^ Bin;
+assign BO = (a & b) | ((a ^ b) & Bin);
+endmodule
+~~~
 
 
 **RTL Schematic**
 
-![Screenshot 2024-12-25 144406](https://github.com/user-attachments/assets/ee2f840f-88d4-4fa0-b061-612a0446e6b9)
+FULL ADDER:
 
-![Screenshot 2024-12-25 144431](https://github.com/user-attachments/assets/1b514857-0ce9-47c0-b26e-8a26285abeeb)
-
-**Output TIMING WAVEDIAGRAM**
-
-![Screenshot 2024-12-25 144506](https://github.com/user-attachments/assets/879c1226-09a6-41f9-82b9-b909cffc878f)
+![Screenshot 2025-01-02 083208](https://github.com/user-attachments/assets/a10bac38-1e23-43ce-bf73-98f392f572e5)
 
 
-![Screenshot 2024-12-25 144539](https://github.com/user-attachments/assets/26e1cb0c-d984-4862-8e1b-535102615ce0)
+FULL SUBRACTOR:
+
+![Screenshot 2025-01-02 083523](https://github.com/user-attachments/assets/e0ceeeab-aa9e-41c3-b8b9-f72916de4e3b)
+
+**OUTPUT TIMING WAVEDIAGRAM**
+
+FULL ADDER:
+
+
+![Screenshot 2025-01-02 081936](https://github.com/user-attachments/assets/4413b942-4a4f-46b5-94ed-72bd40089a99)
+
+
+FULL SUBRACTOR:
+
+
+![Screenshot 2025-01-02 082007](https://github.com/user-attachments/assets/b9542815-d1fa-43d4-979b-9d9f066d79d6)
 
 **Result:**
 
