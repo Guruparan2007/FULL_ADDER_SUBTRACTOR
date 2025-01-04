@@ -64,7 +64,7 @@ FULL ADDER:
 4.Compile the design, verify its functionality through simulation. 
 5.Implement the design on the target device and program it.
 
-FULL SUBRACTOR:
+FULL SUBRTACTOR:
 
 
 1.Follow the same steps as for the full adder. 
@@ -83,21 +83,25 @@ FULL SUBRACTOR:
 
 FULL ADDER:
 ~~~
-module Lab4Fa (A, B, Cin, sum, car) ;
-input A,B,Cin;
-output sum, car;
-assign sum = A ^ B ^ Cin;
-assign car = ( (A & B) | ( (A ^ B) &Cin) ) ;
+
+
+module full_add(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=(a^b^cin);
+assign carry=((a&b)|((a^b)&cin));
 endmodule
 ~~~
 
-FULL SUBRACTOR:
+FULL SUBTRACTOR:
 ~~~
-module Lab4Fs (A, B, Bin, diff, bor) ;
-input A, B, Bin;
-output diff, bor;
-assign diff = A ^ B ^ Bin;
-assign bor = ((A & B) | ( (A ^ B) & Bin) ) ;
+
+
+module full_sub(a,b,bin,diff,borr);
+input a,b,bin;
+output diff,borr;
+assign diff=((a&b)|((a^b)&bin));
+assign borr=((~a&b)|(b&bin)|(~a&bin));
 endmodule
 ~~~
 
@@ -106,26 +110,31 @@ endmodule
 
 FULL ADDER:
 
-![Screenshot 2025-01-04 080756](https://github.com/user-attachments/assets/f6d787e9-0b6c-459c-9d03-f537372fd38b)
+![Screenshot 2025-01-04 093137](https://github.com/user-attachments/assets/0538513f-4f54-4437-aafc-85bedf91b437)
 
-FULL SUBRACTOR:
 
-![Screenshot 2025-01-04 080809](https://github.com/user-attachments/assets/9b8733ae-e4eb-4e98-9852-5ddb8204f944)
+FULL SUBTRACTOR:
+
+
+![Screenshot 2025-01-04 093156](https://github.com/user-attachments/assets/e65d5136-384e-4728-b8b7-2ffe5c4159f8)
+
 
 **OUTPUT TIMING WAVEDIAGRAM**
 
 FULL ADDER:
 
 
-![Screenshot 2025-01-04 080850](https://github.com/user-attachments/assets/7127961c-2ac3-4b8f-afac-3f24d92c3003)
+
+![Screenshot 2025-01-04 093217](https://github.com/user-attachments/assets/f820488b-86db-4ee3-b46d-88c28adbbcc2)
 
 
 
-FULL SUBRACTOR:
+FULL SUBTRACTOR:
 
 
+![Screenshot 2025-01-04 093242](https://github.com/user-attachments/assets/2c0cd77f-2234-4be3-91df-463579d6d0c4)
 
-![Screenshot 2025-01-04 080914](https://github.com/user-attachments/assets/dcb4c6f1-6cd6-4daf-827b-2e4ee6974e63)
+
 
 
 **Result:**
