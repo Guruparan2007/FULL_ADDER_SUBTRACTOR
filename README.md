@@ -45,7 +45,7 @@ FULL ADDER:
 ![Screenshot 2025-01-04 080556](https://github.com/user-attachments/assets/8dff87a8-81e2-4438-a9fd-4600bc9cc9b7)
 
 
-FULL SUBRACTOR:
+FULL SUBRTACTOR:
 
 ![Screenshot 2025-01-04 080634](https://github.com/user-attachments/assets/6bd06480-f279-4a82-9404-116367ba5cb6)
 
@@ -116,7 +116,8 @@ FULL ADDER:
 FULL SUBTRACTOR:
 
 
-![Screenshot 2025-01-04 093156](https://github.com/user-attachments/assets/e65d5136-384e-4728-b8b7-2ffe5c4159f8)
+![Screenshot 2025-01-04 100444](https://github.com/user-attachments/assets/5c7a38e7-755b-4cae-9b8b-41be97280e38)
+
 
 
 **OUTPUT TIMING WAVEDIAGRAM**
