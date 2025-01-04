@@ -42,14 +42,13 @@ Borrow out = A'Bin + A'B + BBin
 
 FULL ADDER:
 
-
-![Screenshot 2025-01-02 081759](https://github.com/user-attachments/assets/01a0d591-d612-47d7-92ed-0c1fc9cdeb9f)
+![Screenshot 2025-01-04 080556](https://github.com/user-attachments/assets/8dff87a8-81e2-4438-a9fd-4600bc9cc9b7)
 
 
 FULL SUBRACTOR:
 
+![Screenshot 2025-01-04 080634](https://github.com/user-attachments/assets/6bd06480-f279-4a82-9404-116367ba5cb6)
 
-![Screenshot 2025-01-02 081822](https://github.com/user-attachments/assets/62ba2168-8fb2-45dc-8947-b0970b4416f2)
 
 
 
@@ -80,30 +79,25 @@ FULL SUBRACTOR:
 
 
 **Program:**
+
+
+FULL ADDER:
 ~~~
-FULL ADDER :
-
-module fulladd_top(a,b,cin,sum,carry);
-input a,b,cin;
-output sum,carry;
-wire w1,w2,w3,w4;       
-xor(w1,a,b);
-xor(sum,w1,cin);        
-and(w2,a,b);
-and(w3,b,cin);
-and(w4,cin,a);
-or(carry,w2,w3,w4);
-endmodule 
-
+module Lab4Fa (A, B, Cin, sum, car) ;
+input A,B,Cin;
+output sum, car;
+assign sum = A ^ B ^ Cin;
+assign car = ( (A & B) | ( (A ^ B) &Cin) ) ;
+endmodule
+~~~
 
 FULL SUBRACTOR:
-
-
-module fullsub_top(a,b,Bin,BO,DIFF);
-input a,b,Bin;
-output BO,DIFF;
-assign DIFF = a ^ b ^ Bin;
-assign BO = (a & b) | ((a ^ b) & Bin);
+~~~
+module Lab4Fs (A, B, Bin, diff, bor) ;
+input A, B, Bin;
+output diff, bor;
+assign diff = A ^ B ^ Bin;
+assign bor = ((A & B) | ( (A ^ B) & Bin) ) ;
 endmodule
 ~~~
 
@@ -112,25 +106,27 @@ endmodule
 
 FULL ADDER:
 
-![Screenshot 2025-01-02 083208](https://github.com/user-attachments/assets/a10bac38-1e23-43ce-bf73-98f392f572e5)
-
+![Screenshot 2025-01-04 080756](https://github.com/user-attachments/assets/f6d787e9-0b6c-459c-9d03-f537372fd38b)
 
 FULL SUBRACTOR:
 
-![Screenshot 2025-01-02 083523](https://github.com/user-attachments/assets/e0ceeeab-aa9e-41c3-b8b9-f72916de4e3b)
+![Screenshot 2025-01-04 080809](https://github.com/user-attachments/assets/9b8733ae-e4eb-4e98-9852-5ddb8204f944)
 
 **OUTPUT TIMING WAVEDIAGRAM**
 
 FULL ADDER:
 
 
-![Screenshot 2025-01-02 081936](https://github.com/user-attachments/assets/4413b942-4a4f-46b5-94ed-72bd40089a99)
+![Screenshot 2025-01-04 080850](https://github.com/user-attachments/assets/7127961c-2ac3-4b8f-afac-3f24d92c3003)
+
 
 
 FULL SUBRACTOR:
 
 
-![Screenshot 2025-01-02 082007](https://github.com/user-attachments/assets/b9542815-d1fa-43d4-979b-9d9f066d79d6)
+
+![Screenshot 2025-01-04 080914](https://github.com/user-attachments/assets/dcb4c6f1-6cd6-4daf-827b-2e4ee6974e63)
+
 
 **Result:**
 
